@@ -1,7 +1,7 @@
 
 import './App.css';
 import Title from "./components/Title"
-import Items from "./components/Items"
+import ItemsList from "./components/ItemsList"
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header>
         <Title />
-        <Items />
+        <ItemsList />
       </header>
     </div>
   );
