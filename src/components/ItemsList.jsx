@@ -1,13 +1,16 @@
 import * as api from "../utils/api"
 import { useEffect, useState } from "react"
 import ItemsCard from "./ItemsCard"
+import { useParams } from "react-router-dom"
 
 
 export default function Items () {
     const [items, setItems] = useState([])
-
+   
+    const {category} = useParams();
+    
     useEffect(()=> {
-        api.getItems().then((items) => {
+        api.getItems(category).then((items) => {
             setItems(items)
         })
     },[])
