@@ -10,15 +10,14 @@ export default function Categories () {
         api.getCategories().then((categories) => {
             setCategories(categories)
         })
-    }, [categories]);
+    }, []);
 
     return (
         <nav>
             <Link to={"/"}>All Categories</Link>
             {categories.map(({category_name}) => {
-                
                 return (
-                <Link to={`/categories/${category_name}/items`}>
+                <Link key={category_name} to={`/categories/${category_name}/items`}>
                 {category_name}
                 </Link>
                 )

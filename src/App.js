@@ -16,7 +16,8 @@ function App() {
         </header>
         <main>
         <Categories />
-        
+
+
         <Routes>
           <Route path="/" element={<ItemsList />}></Route>
           <Route path="/categories/:category/items" element={<ItemsList />}></Route>

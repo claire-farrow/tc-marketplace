@@ -5,9 +5,13 @@ const marketApi = axios.create({
 })
 
 export function getItems (category) {
+    if (!category) {
+        return marketApi.get('/items').then((res) => {
+            return res.data.items
+        })
+    }
     
-
-    return marketApi.get("/items").then((res) => {
+    return marketApi.get(`/items?category_name=${category}`).then((res) => {
         return res.data.items
     })
 }
