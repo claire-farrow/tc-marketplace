@@ -14,7 +14,7 @@ export default function Categories () {
 
     return (
         <nav>
-            <Link to={"/"}>All Categories</Link>
+            
             {categories.map(({category_name}) => {
                 return (
                 <Link key={category_name} to={`/categories/${category_name}/items`}>

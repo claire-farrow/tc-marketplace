@@ -1,8 +1,8 @@
 import * as api from "../utils/api"
 import { useEffect, useState } from "react"
-import ItemsCard from "./ItemsCard"
+
 import { useParams } from "react-router-dom"
-import Sell from "./Sell"
+import SellItem from "./SellItem"
 
 export default function Items () {
     const [items, setItems] = useState([])
@@ -20,21 +20,24 @@ export default function Items () {
     return (
         <>
         <h2>Sell Items</h2>
-        <Sell />
+        <SellItem />
         <h2>Item</h2>
         
+        <section className="items">
         <ul>
-        {items.map(({item_id, item_name, description, img_url, price, category_name}) => {
-            return <ItemsCard
-            key={item_id}
-            item_id={item_id}
-            item_name={item_name}
-            description={description}
-            img_url={img_url}
-            price={price}
-            category_name={category_name}/>
+        {items.map((item) => {
+            return (
+                <li key={item.item_id}>
+                    <img src={item.img_url} alt={item.item_name} className="items-img"/>
+                    <h3>{item.item_name}</h3>
+                    <p>{item.description}</p>
+                    <p>{item.category_name}</p>
+                    <p>{item.price}p</p>
+                </li>
+            )
         })}
         </ul>
+        </section>
         </>
     )
 }

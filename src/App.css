@@ -1,3 +1,17 @@
 .App {
   text-align: center;
 }
+
+.users-img {
+  width: 10%;
+}
+
+.items-img {
+  width: 10%;
+}
+
+.nav-avatar_url {
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
